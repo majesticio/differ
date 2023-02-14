@@ -1,11 +1,11 @@
-/*  THIS PROGRAM takes json file1 (output of openaq adapter measurements)
+/*  THIS PROGRAM takes json file1 (output of OpenAQ adapter measurements)
     and finds the nearest neighbor from json file2. it then checks if the
     parameter and unit are the same. if they are, it pushes the location
     and coordinates to the duplicates array. it also pushes the location
     and coordinates to the uniqueStations array if there is no duplicate, 
-    and tells you the counts of each.
+    and then tells you the counts of each.
      */
-    
+
 const turf = require('turf');
 const fs = require('fs');
 
