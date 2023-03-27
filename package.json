@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@turf/turf": "^6.5.0",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.3.0",
+    "turf": "^3.0.14"
+  }
+}
