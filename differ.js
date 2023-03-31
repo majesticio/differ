@@ -9,11 +9,11 @@
 const turf = require('turf');
 const fs = require('fs');
 
-const duplicateDistance = 0.02 // choose how close is 'duplicated' in (km) eg: 0.01
+const duplicateDistance = 0.1 // choose how close is 'duplicated' in (km) eg: 0.01
 // const path1 = './NL1-ALLDATA-clean.json';
 // const path2 = './NL2-ALLDATA.json';
-const path1 = 'data/hungary-old.json';
-const path2 = 'data/hungary-new.json';
+const path1 = 'data/eea-spain.json';
+const path2 = 'data/barca.json';
 // read the two files
 const file1 = JSON.parse(fs.readFileSync(path1));
 const file2 = JSON.parse(fs.readFileSync(path2));
@@ -43,13 +43,13 @@ file1.forEach(p1 => {
             original : {
                 location: p1.location,
                 coordinates: [p1.coordinates.latitude, p1.coordinates.longitude],
-                // value: p1.value, // comment out to only use coordinates
+                value: p1.value, // comment out to only use coordinates
                 date: p1.date.utc,
             },
             nearest: {
                 location: nearest.properties.location,
                 coordinates: [nearest.geometry.coordinates[1], nearest.geometry.coordinates[0]],
-                // value: nearest.properties.value, // comment out to only use coordinates
+                value: nearest.properties.value, // comment out to only use coordinates
                 date: nearest.properties.date.utc,
             }
           });
